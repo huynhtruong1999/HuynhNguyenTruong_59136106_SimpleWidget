@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    RadioGroup grdbt;
+    RadioGroup grbutton;
     Button bt;
     EditText ten,ns,stkhac;
     RadioButton nu,nam;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     {
         ten = findViewById(R.id.ten);
         ns = findViewById(R.id.ns);
-        grdbt = findViewById(R.id.grdbt);
+        grbutton = findViewById(R.id.grbutton);
         stkhac = findViewById(R.id.stkhac);
         bt = findViewById(R.id.bt);
         nu = findViewById(R.id.nu);
@@ -55,44 +55,44 @@ public class MainActivity extends AppCompatActivity {
     }
     private void buttonxn()
     {
-        int sex = this.grdbt.getCheckedRadioButtonId();
+        int sex = this.grbutton.getCheckedRadioButtonId();
         String name = ten.getText().toString().trim();
         String date = ns.getText().toString().trim();
         RadioButton grbt = this.findViewById(sex);
-        String st ="";
+        String sothich ="";
         if(nhac.isChecked()){
-            if (st.length()>0){
-                st+= ",";
+            if (sothich.length()>0){
+                sothich+= ",";
             }
-            st += "Nghe Nhạc";
+            sothich += "Nghe Nhạc";
         }
         if(phim.isChecked()){
-            if (st.length()>0){
-                st+= ",";
+            if (sothich.length()>0){
+                sothich+= ",";
             }
-            st += "Xem Phim";
+            sothich += "Xem Phim";
         }
         if(nau.isChecked()){
-            if (st.length()>0){
-                st+= ",";
+            if (sothich.length()>0){
+                sothich+= ",";
             }
-            st += "Vào Bếp Nấu Ăn";
+            sothich += "Vào Bếp Nấu Ăn";
         }
         if(home.isChecked()){
-            if (st.length()>0){
-                st+= ",";
+            if (sothich.length()>0){
+                sothich+= ",";
             }
-            st += "Ở nhà một mình";
+            sothich += "Ở nhà một mình";
         }
         if(cafe.isChecked()){
-            if (st.length()>0){
-                st+= ",";
+            if (sothich.length()>0){
+                sothich+= ",";
             }
-            st += "Đi cafe với bạn";
+            sothich += "Đi cafe với bạn";
         }
-        st +=",";
-        st += stkhac.getText().toString().trim();
-        String xuat = name + "\nNgaySinh : " + date + "\nGiới Tính : " + grbt.getText() + "\nSở Thích : " + st ;
+        sothich+=",";
+        sothich += stkhac.getText().toString().trim();
+        String xuat = name + "\nNgaySinh : " + date + "\nGiới Tính : " + grbt.getText() + "\nSở Thích : " + sothich ;
         Toast.makeText(getApplicationContext(), xuat, Toast.LENGTH_SHORT).show();
     }
 
